@@ -161,10 +161,7 @@ void ultrasonic_Sensor()
     }
   }
   
-  // else
-  // {
-  //   var=true;
-  // }
+
   
   
 }
@@ -231,21 +228,7 @@ void loop()
       stringComplete = true;
   }
 
-  //  if (inputString[0] == 'c' && inputString[1] == 'h' && inputString[2] == 'g'&& inputString[3] == '1')
-  //  {
-  //    direction = true;
-  //    mySerial.write("Now you can shift tab\n");
-  //    Serial.println("matchhh");
-  //
-  //
-  //  }
-  //
-  //  if(inputString.startsWith("play"))
-  //
-  //    {
-  //     Serial.println("match");
-  //    play_song(tempo_Game_of_Thrones,melody_Game_of_Throness,notes_Game_of_Thrones);
-  //    }
+
 
   if (stringComplete)
   {
