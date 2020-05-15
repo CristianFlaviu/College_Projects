@@ -12,9 +12,9 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 
-import org.w3c.dom.css.ElementCSSInlineStyle;
+
+
 
 import com.mysql.cj.conf.StringProperty;
 
@@ -29,20 +29,14 @@ import dao.GeneralDao;
 import javax.swing.ComboBoxEditor;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.RowSorter;
-import javax.swing.SortOrder;
+
 import javax.swing.plaf.ToolTipUI;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import java.awt.event.ActionEvent;
-//panouTabele.add(sp);
-//panouTabele.add(sc);
-//JPanel panouTabele = new JPanel();
-//panouTabele.setLayout(new CardLayout());
-//panouTabele.add(sp);
-//panouTabele.add(sc);
+
 
 public class ClientView extends JFrame {
 
