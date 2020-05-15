@@ -3,13 +3,14 @@
 #include "Game_of_Thrones.h"
 
 SoftwareSerial mySerial(2, 3); // RX, TX
+
 String inputString = "";
 String outputString = "";
 
 int count_sound = 0;
 long sum_sound = 0;
 int average_sound;
-
+ 
 const int trigPin2 = 7;
 const int echoPin2 = 6;
 
