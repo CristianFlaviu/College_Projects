@@ -1,0 +1,53 @@
+--DocumentsTable--
+
+CREATE TABLE 'documents' (
+  'id' varchar(255) NOT NULL,
+  'nume' varchar(255),
+  'type' varchar(255),
+  PRIMARY KEY ('id')
+) 
+
+
+--HouseTable--
+
+CREATE TABLE 'house' (
+  'id' varchar(255) NOT NULL,
+  'adress' varchar(255),
+  'user_id' varchar(255),
+  PRIMARY KEY ('id'),
+  KEY 'cons1' ('user_id'),
+  CONSTRAINT 'cons1 'FOREIGN KEY ('user_id') REFERENCES 'user' ('id')
+) 
+
+--RequestTable--
+
+CREATE TABLE 'request' (
+  'id' varchar(255) NOT NULL,
+  'date' datetime,
+  'requestState' int,
+  'title' varchar(255),
+  'document_id' varchar(255),
+  'house_id' varchar(255),
+  'user_id' varchar(255),
+  PRIMARY KEY ('id'),
+  KEY 'docCons'('document_id'),
+  KEY 'houseCons' ('house_id'),
+  KEY 'userCons' ('user_id'),
+
+  CONSTRAINT 'docCons'  FOREIGN KEY ('house_id') REFERENCES 'house' ('id'),
+  CONSTRAINT 'houseCons' FOREIGN KEY ('user_id') REFERENCES 'user' ('id'),
+  CONSTRAINT 'userCons' FOREIGN KEY ('document_id') REFERENCES 'documents' ('id')
+)
+
+
+--UserTable--
+
+CREATE TABLE 'user' (
+  'id' varchar(255) NOT NULL,
+  'FirstName' varchar(255),
+  'LastName' varchar(255),
+  'email' varchar(255),
+  'password' varchar(255),
+  PRIMARY KEY ('id')
+) 
+

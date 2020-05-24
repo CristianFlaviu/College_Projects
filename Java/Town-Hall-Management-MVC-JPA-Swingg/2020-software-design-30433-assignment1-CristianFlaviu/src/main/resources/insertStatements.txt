@@ -1,0 +1,32 @@
+
+---DocumentTable----
+
+INSERT INTO  documents ('id','nume','type') VALUES ('doc1','Ceritfica de Castorie','certificat');
+INSERT INTO documents ('id','nume','type') VALUES ('doc2','Fisa de Imatriculare','taxa');
+INSERT INTO documents ('id','nume','type') VALUES ('doc3','fisa de somaj','munca');
+INSERT INTO documents ('id','nume','type') VALUES ('doc4','dovataPlataFacuturaX','taxa');
+
+
+--UserTable---
+
+INSERT INTO user ('id','FirstName','LastName','email','password') VALUES ('@1','1','2','1<admin>','1');
+INSERT INTO user ('id','FirstName','LastName','email','password') VALUES ('AndreeaCristian','Andreea','Cristian','andrea_cristian@yahoo.com','yes');
+INSERT INTO user ('id','FirstName','LastName','email','password') VALUES ('CristianFlaviu','Flaviu','Cristian','flaviu_remus@yahoo.com','yes');
+
+
+--RequestTable--
+
+INSERT INTO request ('id','date','requestState','title','document_id','house_id','user_id') VALUES ('1a151f90-d48b-49df-9507-150b436715e6','2020-03-22 20:58:12',2,'Am fost demis de la facultate','doc3','Casa1','CristianFlaviu');
+INSERT INTO request ('id','date','requestState','title','document_id','house_id','user_id') VALUES ('48b019c5-2d65-408c-81d9-fde4aaec26cc','2020-03-22 20:59:33',2,'Am platit toate Taxele','doc4','Casa1','CristianFlaviu');
+INSERT INTO request ('id','date','requestState','title','document_id','house_id','user_id') VALUES ('76b40b1e-3a28-4e77-ac1b-f27147bb3eb3','2020-03-22 21:17:31',2,'Am platiti Amenda','doc4','CasaLuc','AndreeaCristian');
+INSERT INTO request ('id','date','requestState','title','document_id','house_id','user_id') VALUES ('7a283b1a-a8db-4a94-87c9-899cb8ded705','2020-03-22 20:59:13',2,'Depresia','doc1','Casa1','CristianFlaviu');
+
+--HouseTable--
+
+INSERT INTO house ('id','adress','user_id') VALUES ('Casa1','Lucacesti','CristianFlaviu');
+INSERT INTO house  ('id','adress','user_id') VALUES ('Casa2','BaiaMare','CristianFlaviu');
+INSERT INTO house  ('id','adress','user_id') VALUES ('Casa3','Cluj','CristianFlaviu');
+INSERT INTO house  ('id','adress','user_id') VALUES ('CasaBm','BaiaMare','AndreeaCristian');
+INSERT INTO house  ('id','adress','user_id') VALUES ('CasaLuc','Lucacesti','AndreeaCristian');
+
+
