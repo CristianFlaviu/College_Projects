@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Brief Accounts</title>
+</head>
+<body>
+<div th:if="${existAcc}!=null" align="center" method="GET">
+    <h1> All Accounts</h1>
+    <table border="1">
+        <thead>
+        <tr>
+
+            <th>IBAN</th>
+            <th>Valuta</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="acc : ${list}">
+            <td th:text="${acc.IBAN}">IBAN</td>
+            <td th:text="${acc.valuta}">Valuta</td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+</div>
+
+<div th:if="${existAcc}==null" align="center" method="GET">
+    <h1>Momentan nu aveti niciun cont </h1>
+</div>
+
+</body>
+</html>

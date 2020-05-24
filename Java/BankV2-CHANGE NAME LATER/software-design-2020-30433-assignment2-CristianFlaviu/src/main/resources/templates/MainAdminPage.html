@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Admin Main Page</title>
+</head>
+<body>
+
+<div align="center"><h1> Welcome back  Admin </h1>
+
+    <br>
+    <table cellspacing="10">
+
+        <tr>
+            <td>
+                <a th:href="@{/admin/newCompany}">New Company</a>
+            </td>
+            <td>   </td>
+            <td>
+                <a th:href="@{/admin/newFactura}">New Factura</a>
+            </td>
+            <td>
+                <a th:href="@{/admin/newEmail}">New Email</a>
+            </td>
+            <td>
+                <a th:href="@{/admin/viewUsers}">View Users</a>
+            </td>
+            <td>
+                <a th:href="@{/admin/notifyUsers}">Notify Users</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>

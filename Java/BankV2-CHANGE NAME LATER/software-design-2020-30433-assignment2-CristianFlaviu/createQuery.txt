@@ -1,0 +1,88 @@
+CREATE TABLE 'address' (
+  'id' varchar(255) NOT NULL,
+  'city' varchar(255) DEFAULT NULL,
+  'country' varchar(255) DEFAULT NULL,
+  PRIMARY KEY ('id')
+
+
+CREATE TABLE 'company' (
+  'id' varchar(255) NOT NULL,
+  'name' varchar(30) NOT NULL,
+  'currency_id' varchar(255) DEFAULT NULL,
+  PRIMARY KEY ('id'),
+  KEY 'key1' ('currency_id'),
+  CONSTRAINT 'key1' FOREIGN KEY ('currency_id') REFERENCES 'currency' ('id')
+) 
+
+CREATE TABLE 'currency' (
+  'id' varchar(255) NOT NULL,
+  'comision' int DEFAULT NULL,
+  'name' varchar(255) DEFAULT NULL,
+  'valuta' int DEFAULT NULL,
+  'dobanda' int DEFAULT NULL,
+  'unit_value' int DEFAULT NULL,
+  PRIMARY KEY ('id')
+)
+
+CREATE TABLE 'factura' (
+  'id' varchar(255) NOT NULL,
+  'suma_bani' int DEFAULT NULL,
+  'company_id' varchar(255) DEFAULT NULL,
+  'user_id' varchar(255) DEFAULT NULL,
+  PRIMARY KEY ('id'),
+  KEY 'Key4' ('company_id'),
+  KEY 'Key5' ('user_id'),
+  CONSTRAINT 'Key5' FOREIGN KEY ('user_id') REFERENCES 'user' ('id'),
+  CONSTRAINT 'Key4' FOREIGN KEY ('company_id') REFERENCES 'company' ('id')
+)
+
+
+CREATE TABLE 'general_account' (
+  'id' int NOT NULL AUTO_INCREMENT,
+  'iban' varchar(255) DEFAULT NULL,
+  'creatin_date' datetime DEFAULT NULL,
+  'last_modification_date' datetime DEFAULT NULL,
+  'suma_bani' int DEFAULT NULL,
+  'type' varchar(255) DEFAULT NULL,
+  'currency_id' varchar(255) DEFAULT NULL,
+  'user_id' varchar(255) DEFAULT NULL,
+  'dtype' varchar(31) NOT NULL,
+  PRIMARY KEY ('id'),
+  KEY 'Key6' ('currency_id'),
+  KEY 'Key7' ('user_id'),
+  CONSTRAINT 'Key7' FOREIGN KEY ('user_id') REFERENCES 'user' ('id'),
+  CONSTRAINT 'Key6' FOREIGN KEY ('currency_id') REFERENCES 'currency' ('id')
+)
+
+CREATE TABLE 'tranzaction' (
+  'id' varchar(255) NOT NULL,
+  'date' datetime DEFAULT NULL,
+  'factura_id' varchar(255) DEFAULT NULL,
+  'account_id' int DEFAULT NULL,
+  PRIMARY KEY ('id'),
+  KEY 'Key8' ('factura_id'),
+  KEY 'Key9' ('account_id'),
+  CONSTRAINT 'Key8' FOREIGN KEY ('factura_id') REFERENCES 'factura' ('id'),
+  CONSTRAINT 'Key9' FOREIGN KEY ('account_id') REFERENCES 'general_account' ('id')
+)
+
+
+CREATE TABLE 'user' (
+  'id' varchar(255) NOT NULL,
+  'age' int DEFAULT NULL,
+  'birth_date' date DEFAULT NULL,
+  'email' varchar(30) NOT NULL,
+  'first_name' varchar(30) NOT NULL,
+  'is_admin' bit(1) DEFAULT NULL,
+  'last_name' varchar(30) NOT NULL,
+  'password' varchar(80) NOT NULL,
+  'registration_date' date DEFAULT NULL,
+  'username' varchar(30) NOT NULL,
+  'address_id' varchar(255) DEFAULT NULL,
+  'reset_pass_code' varchar(255) DEFAULT NULL,
+  PRIMARY KEY ('id'),
+  UNIQUE KEY 'key10'('address_id'),
+  CONSTRAINT 'key10'('address_id'),FOREIGN KEY ('address_id') REFERENCES 'address' ('id')
+)
+
+

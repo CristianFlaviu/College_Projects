@@ -1,0 +1,15 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Log out </title>
+</head>
+<body>
+
+
+    <h1 th:if="${logSucc != null}"><h3 th:text="${logSucc}"> </h3></h1>
+    <h1 th:if="${logTry != null}"><h3 th:text="${logTry}"> </h3></h1>
+
+</body>
+</html>

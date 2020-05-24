@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>All Acounts</title>
+</head>
+<body>
+<div align="center">
+
+    <h1> Pay your bill</h1>
+    <br/>
+    <form action="#" th:action="@{/user/payFactura}" method="post">
+        <table border="0" cellpadding="10">
+
+            <tr>
+                <td>Factura</td>
+                <td>
+                    <select class="form-control" name="facc_id">
+                        <option th:each="factura : ${listFac}"
+                                th:value= "${factura.id}"
+                                th:text="${factura.company?.name} + ' - '+${factura.sumaBani} + ' - '+ ${factura.company?.currency?.name}">
+
+                        </option>
+
+                    </select>
+
+                </td>
+                <td th:if="${facturaPaid}!=null">
+                        Factura deja platita
+                </td>
+
+            </tr>
+            <tr>
+                <td>General Account</td>
+                <td>
+                    <select class="form-control" name="acc_id">
+                        <option th:each="acc : ${listAcc}"
+                                th:value="${acc.id}"
+                                th:text="${ acc.IBAN} +' - '+ ${acc.sumaBani} + ' - ' + ${acc.currency?.name} +' '+${acc.type} ">
+
+                        </option>
+
+                    </select></td>
+
+            </tr>
+            <tr>
+                <td><span th:if="${errorAcc != null}" class="error"><h3 th:text="${errorAcc}"> </h3></span></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Pay
+                    </button>
+
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+</body>
+</html>

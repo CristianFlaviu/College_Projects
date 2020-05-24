@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Home </title>
+</head>
+<body>
+
+<div align="center"><h1> Welcome to Hai En Gi</h1>
+
+    <br>
+    <br>
+    <table  cellspacing="10">
+        <tr>
+
+            <td>
+               <h3> <a th:href="@{/user/emailResetPassword}">Reset Password</a> </h3>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <h3><a th:href="@{/user/newUser}">Register </a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3><a th:href="@{/user/mainPage}">Login </a></h3>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+
+</body>
+</html>

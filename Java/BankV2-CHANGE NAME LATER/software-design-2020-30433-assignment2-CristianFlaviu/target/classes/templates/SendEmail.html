@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>New Email</title>
+</head>
+<body>
+
+<div align="center">
+
+    <h1> Send a new Mail</h1>
+    <br>
+    <form action="#" th:action="@{/admin/newEmail}"  th:object="${emailDTO}" method="post">
+        <table border="0" cellpadding="10">
+
+            <tr>
+                <td>Subject </td>
+                <td  ><input  type="text" th:field="*{subject}"> </td>
+                <td th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}">subject Error</td>
+
+                </td>
+            </tr>
+                <tr>
+                <td>Message </td>
+                <td><input style="height:35px; width:175px"  type="text" th:field="*{message}"> </td>
+                <td th:if="${#fields.hasErrors('message')}" th:errors="*{message}">message Error</td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>User ID</td>
+
+                <td>
+                    <select class="form-control" name="user_id">
+                        <option th:each="user : ${list}"
+                                th:value="${user.id}"
+                                th:text="${user.firstName}">
+
+                        </option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Generate
+                    </button>
+
+                </td>
+
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

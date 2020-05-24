@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<h1>Login</h1>
+
+<form action="#" th:action="@{/log}" th:object="${loginDTO}" method="post">
+    <table border="1">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{username}" /></td>
+            <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" th:field="*{password}" /></td>
+            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Age Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit"  name="action" value="newUser"  >New User</button></td>
+            <td><button type="submit" name="action" value="login" >Login</button></td>
+        </tr>
+        <span th:if="${logError != null}" class="error"><h3 th:text="${logError}"> este numele acelui user</h3></span>
+    </table>
+</form>
+
+</body>
+</html>

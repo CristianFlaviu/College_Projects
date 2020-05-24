@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>All Acounts</title>
+</head>
+<body>
+<div align="center">
+
+    <h1> Create New Bank Account</h1>
+    <br/>
+    <form action="#" th:action="@{/user/newAcc}" th:object="${user}" method="post">
+        <table border="0" cellpadding="10">
+
+            <tr>
+                <td>Type of Account</td>
+                <td>
+                    <select class="form-control" name="type_acc">
+                        <option th:value="spending">spending  </option>
+                        <option th:value="saving">saving</option>
+                    </select></td>
+
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>
+                    <select class="form-control" name="currency_id">
+                        <option th:each="currency : ${list}"
+                                th:value="${currency.id}"
+                                th:text="${currency.name}">
+
+                        </option>
+
+                    </select></td>
+
+            </tr>
+            <tr>
+                <td><span th:if="${errorAcc != null}" class="error"><h3 th:text="${errorAcc}"> </h3></span></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Save
+                    </button>
+
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+</body>
+</html>

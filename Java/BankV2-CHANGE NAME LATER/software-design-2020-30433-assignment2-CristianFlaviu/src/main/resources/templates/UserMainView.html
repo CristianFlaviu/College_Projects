@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>User Main Page</title>
+</head>
+<body>
+
+<div align="center"><h1> Welcome back <span th:text="${name}"></span></h1>
+
+    <br>
+    <table cellpadding="10" cellspacing="10">
+
+        <tr >
+
+            <td>
+                <a th:href="@{/user/newAcc}">Create new Account</a>
+            </td>
+        </tr>
+        <tr class="spacer">
+
+            <td>
+                <a th:href="@{/user/briefAcc}">Account Details</a>
+            </td>
+        </tr>
+        <tr >
+
+            <td>
+                <a th:href="@{/user/addMoneySpend}">Add money Spending Acc</a>
+            </td>
+        </tr>
+        <tr >
+
+        <td>
+            <a th:href="@{/user/addMoneySave}">Add money Saving Acc</a>
+        </td>
+    </tr>
+        <tr >
+
+            <td>
+                <a th:href="@{/user/detailsAcc}">Detailed Account</a>
+            </td>
+        </tr>
+        <tr >
+
+            <td>
+                <a th:href="@{/user/payFactura}">Pay Factura</a>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+
+</body>
+</html>

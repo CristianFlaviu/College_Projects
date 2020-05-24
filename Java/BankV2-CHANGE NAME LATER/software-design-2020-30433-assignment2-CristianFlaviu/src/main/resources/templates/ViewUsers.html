@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+    <div align="center" method="GET">
+    <h1> All User</h1>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>BirthYear</th>
+                <th>Adress</th>
+                <th>username</th>
+                <th> email</th>
+<!--                <th>Action </th>-->
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">ID</td>
+                <td th:text="${user.firstName}">FirstName</td>
+                <td th:text="${user.lastName}">LastName</td>
+                <td th:text="${user.birthDate}">BirthYear</td>
+                <td th:text="${user.address}">Adress</td>
+                <td th:text="${user.username}">username</td>
+                <td th:text="${user.email}"> email</td>
+
+<!--                <td>-->
+<!--                    <a th:href="@{'/generateFactura' + ${user.id}}">Edit</a>-->
+<!--                </td>-->
+            </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>

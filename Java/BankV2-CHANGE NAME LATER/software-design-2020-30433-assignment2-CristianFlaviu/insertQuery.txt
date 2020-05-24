@@ -1,0 +1,59 @@
+INSERT INTO user(`id`,`age`,`birth_date`,`email`,`first_name`,`is_admin`,`last_name`,`password`,`registration_date`,`username`,`address_id`,`reset_pass_code`) VALUES ('178ce950-dd0f-42d6-8660-34f5dbab99e2',21,'1999-01-02','flaviu_remus@yahoo.com','Flaviu','0','Cristian','rectilinie12','2020-03-30','Flaviu','2','db56b5ff-67ef-47f4-973a-5c255d387f8b');
+INSERT INTO user(`id`,`age`,`birth_date`,`email`,`first_name`,`is_admin`,`last_name`,`password`,`registration_date`,`username`,`address_id`,`reset_pass_code`) VALUES ('1df41aba-e67b-43f4-995e-c477756e59dc',21,'1999-01-11','andreea@gmail.com','Andreea','0','Cristian','yes','2020-04-09','Andreea','5','2');
+INSERT INTO user(`id`,`age`,`birth_date`,`email`,`first_name`,`is_admin`,`last_name`,`password`,`registration_date`,`username`,`address_id`,`reset_pass_code`) VALUES ('3a8012b3-756b-465b-81a7-09bef25cec62',21,'1999-01-11','flaviu_remus@gmail.com','Flaviu','0','Cristian','yes','2020-04-11','Andre','1','e0bbfd19-4324-41c3-ab55-909f3434a2d1');
+INSERT INTO user(`id`,`age`,`birth_date`,`email`,`first_name`,`is_admin`,`last_name`,`password`,`registration_date`,`username`,`address_id`,`reset_pass_code`) VALUES ('51d09782-a1d4-41c5-8e0c-848a3fb315df',47,'1973-01-12','Cristian_Crina@gmail.com','Crina','0','Cristian','yes','2020-04-10','Flaviu Remus','8','f13c65ac-d635-4345-b898-6d689e2ba8d3');
+INSERT INTO user(`id`,`age`,`birth_date`,`email`,`first_name`,`is_admin`,`last_name`,`password`,`registration_date`,`username`,`address_id`,`reset_pass_code`) VALUES ('b079163b-ef75-4222-bd77-af59a2500a9c',21,'1998-12-19','buda_ioana2002@yahoo.com','Ioana','0','Buda','yes','2020-04-09','Buda_Ioana','3','3');
+INSERT INTO user(`id`,`age`,`birth_date`,`email`,`first_name`,`is_admin`,`last_name`,`password`,`registration_date`,`username`,`address_id`,`reset_pass_code`) VALUES ('default-id',21,'1999-01-10','remus@yahoo.com','Claudiu','1','Cristian','1','2020-04-07','Remus','default-id','4');
+
+
+INSERT INTO tranzaction (`id`,`date`,`factura_id`,`account_id`) VALUES ('032dda98-e440-488c-acfc-57319984fbf6','2020-04-12 14:21:50','1bbd9525-1a9d-4128-aa2a-8e9653a414f2',35);
+INSERT INTO tranzaction (`id`,`date`,`factura_id`,`account_id`) VALUES ('61ca3c61-c38c-4afe-b212-2564d54a4c71','2020-04-12 14:21:51','e7b8ed0d-898f-449e-9776-cf459dbded61',37);
+INSERT INTO tranzaction (`id`,`date`,`factura_id`,`account_id`) VALUES ('a16b3189-7784-4bd9-bd9c-e3f59b8beb34','2020-04-12 14:21:51','a9561c89-791f-49ea-9906-6b78de3906a5',36);
+INSERT INTO tranzaction (`id`,`date`,`factura_id`,`account_id`) VALUES ('ab794272-f69d-489f-acdd-e911af1bd424','2020-04-12 14:21:52','e7b8ed0d-898f-449e-9776-cf459dbded61',36);
+INSERT INTO tranzaction (`id`,`date`,`factura_id`,`account_id`) VALUES ('ae51cff0-69a9-47c4-85a7-113c8d02244c','2020-04-12 11:39:12','e7b8ed0d-898f-449e-9776-cf459dbded61',33);
+INSERT INTO tranzaction (`id`,`date`,`factura_id`,`account_id`) VALUES ('c276b5bc-2bfc-4605-b9f8-f4a3a217dff9','2020-04-12 14:21:51','e7b8ed0d-898f-449e-9776-cf459dbded61',39);
+
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (32,'HNG#RO10892FLAN52DOLLAR696346CL','2020-04-12 09:43:19','2020-04-12 09:43:19',-65,'spendingAcc','2','178ce950-dd0f-42d6-8660-34f5dbab99e2','SpendingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (33,'HNG#RO14645FLAN52DOLLAR350438CL','2020-04-12 09:43:23','2020-04-12 09:43:23',415,'spendingAcc','2','178ce950-dd0f-42d6-8660-34f5dbab99e2','SpendingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (34,'HNG#RO60947FLAN52DOLLAR147354CL','2020-04-12 09:43:23','2020-04-12 09:43:23',279,'spendingAcc','2','178ce950-dd0f-42d6-8660-34f5dbab99e2','SpendingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (35,'HNG#RO29209FLAN52EURO540229CL','2020-04-12 09:43:48','2020-04-12 09:43:48',159,'spendingAcc','default-id','178ce950-dd0f-42d6-8660-34f5dbab99e2','SpendingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (36,'HNG#RO85259FLAN52EURO131507CL','2020-04-12 09:43:51','2020-04-12 09:43:51',178,'spendingAcc','default-id','178ce950-dd0f-42d6-8660-34f5dbab99e2','SpendingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (37,'HNG#RO26973FLAN52EURO762795CL','2020-04-12 09:43:53','2020-04-12 09:43:53',167,'spendingAcc','default-id','178ce950-dd0f-42d6-8660-34f5dbab99e2','SpendingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (39,'HNG*RO65172FLAN62DOLLAR363177CL','2020-04-12 09:53:49','2020-04-12 09:53:49',170,'savingAcc','2','178ce950-dd0f-42d6-8660-34f5dbab99e2','SavingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (40,'HNG*RO41048FLAN63DOLLAR506110CL','2020-04-12 09:54:02','2020-04-12 09:54:02',200,'savingAcc','2','178ce950-dd0f-42d6-8660-34f5dbab99e2','SavingAccount');
+INSERT INTO general_acc(`id`,`iban`,`creatin_date`,`last_modification_date`,`suma_bani`,`type`,`currency_id`,`user_id`,`dtype`) VALUES (41,'HNG*RO10092FLAN63DOLLAR113372CL','2020-04-12 09:54:04','2020-04-12 09:54:04',42,'savingAcc','2','178ce950-dd0f-42d6-8660-34f5dbab99e2','SavingAccount');
+
+
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('1bbd9525-1a9d-4128-aa2a-8e9653a414f2',10,'e212257f-29eb-4ffc-871e-e845f292c17a','178ce950-dd0f-42d6-8660-34f5dbab99e2');
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('80ca25c2-dd9a-4a1f-9b93-5469edbf86dd',38,'a7f22122-0fa8-4348-bc71-9b3eea59af52','51d09782-a1d4-41c5-8e0c-848a3fb315df');
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('821df028-c4b2-4b1e-8941-b7bdfcfff98f',10,'e212257f-29eb-4ffc-871e-e845f292c17a','178ce950-dd0f-42d6-8660-34f5dbab99e2');
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('a9561c89-791f-49ea-9906-6b78de3906a5',10,'55555957-35d1-4839-8ca0-0cd011ac72f7','178ce950-dd0f-42d6-8660-34f5dbab99e2');
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('c500bb03-0313-48c2-a747-a6c6a3219961',288,'a7f22122-0fa8-4348-bc71-9b3eea59af52','51d09782-a1d4-41c5-8e0c-848a3fb315df');
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('default-id',10,'DefaultID','default-id');
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('e7b8ed0d-898f-449e-9776-cf459dbded61',10,'0971cef0-0061-4a08-a082-3ed3e1fbd566','178ce950-dd0f-42d6-8660-34f5dbab99e2');
+INSERT INTO factura(`id`,`suma_bani`,`company_id`,`user_id`) VALUES ('ef6775c8-86bd-4b4c-aae4-ed1d7b4a1cc7',10,'55555957-35d1-4839-8ca0-0cd011ac72f7','178ce950-dd0f-42d6-8660-34f5dbab99e2');
+
+
+INSERT INTO currency(`id`,`comision`,`name`,`valuta`,`dobanda`,`unit_value`) VALUES ('2',10,'DOLLAR',6,1,1);
+INSERT INTO currency(`id`,`comision`,`name`,`valuta`,`dobanda`,`unit_value`) VALUES ('default-id',10,'EURO',5,2,2);
+
+
+INSERT INTO company(`id`,`name`,`currency_id`) VALUES ('0971cef0-0061-4a08-a082-3ed3e1fbd566','Auchan','default-id');
+INSERT INTO company(`id`,`name`,`currency_id`) VALUES ('55555957-35d1-4839-8ca0-0cd011ac72f7','Orange','default-id');
+INSERT INTO company(`id`,`name`,`currency_id`) VALUES ('a7f22122-0fa8-4348-bc71-9b3eea59af52','Auchan','default-id');
+INSERT INTO company(`id`,`name`,`currency_id`) VALUES ('a9273f90-059b-43cb-a558-f1a79aea253c','Orange','default-id');
+INSERT INTO company(`id`,`name`,`currency_id`) VALUES ('c2cae965-2bd9-468d-b2f7-83266fc8d5db','Magazin Alimentar','default-id');
+INSERT INTO company(`id`,`name`,`currency_id`) VALUES ('DefaultID','Default-RCS','default-id');
+INSERT INTO company(`id`,`name`,`currency_id`) VALUES ('e212257f-29eb-4ffc-871e-e845f292c17a','Carrefour','2');
+
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('1','Bucuresti','Romania');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('10','Madrid','Spania');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('2','Cluj','Romania');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('3','Vima Mica','Romania');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('4','Iasi','Romania');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('5','BM','RM');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('7','CJ','RO');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('8','suceava','suceava');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('9','Viena','Austria');
+INSERT INTO adress(`id`,`city`,`country`) VALUES ('default-id','Baia Mare','Romania');
+
