@@ -1,0 +1,23 @@
+.dataTable
+{
+    width: 65%;
+    margin-top: 25px ;
+    margin-left: auto;
+    margin-right:auto ;
+    margin-top: 10%;
+}
+
+ 
+.paginator{
+
+    width: 80%;
+    margin: auto;
+  }
+
+  .filter1{
+
+
+     margin-right: auto;
+     margin-left: 10%;
+   
+  }

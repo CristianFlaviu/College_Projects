@@ -1,0 +1,17 @@
+.paginator {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 20ch;
+}
+
+.form {
+    width: 27%;
+    margin-left: 37%;
+    margin-top: 7%
+}
+
+.table {
+    margin-left: 22%;
+    margin-top: 7%;
+    width: 65%;
+}

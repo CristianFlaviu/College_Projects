@@ -1,0 +1,77 @@
+<mat-card class="form">
+    <mat-card-title>Create Report</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="formGroup">
+
+            <mat-form-field>
+
+                <input matInput type="text" placeholder="Title" formControlName="title">
+                <mat-error *ngIf="title.hasError('required')">Title is required </mat-error>
+                <mat-error *ngIf="title.hasError('minlength')">Title must have at leat 5 characters </mat-error>
+
+            </mat-form-field>
+            <br>
+            <br>
+
+            <mat-form-field [style.fontSize]="16" style="width: 90%;">
+                <mat-label>Description of the report</mat-label>
+                <textarea matInput formControlName="description" cdkTextareaAutosize cols="70" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+                <mat-error *ngIf="description.hasError('required')">Description is required </mat-error>
+                <mat-error *ngIf="description.hasError('minlength')">Description must have at leat 10 characters </mat-error>
+            </mat-form-field>
+
+
+            <div class="button">
+                <button type="submit" mat-button (click)="submit()" [disabled]="formGroup.invalid">Submit</button>
+
+            </div>
+
+        </form>
+
+    </mat-card-content>
+</mat-card>
+
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 dataTable table">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date | date }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. </th>
+        <td mat-cell *matCellDef="let i = index">{{ this.paginator.pageIndex == 0 ? i+1 : i +1+ this.paginator.pageIndex * this.paginator.pageSize}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <a routerLink="/report/{{element.id}}" [routerLinkActive]="['link-active']" mat-icon-button>
+             
+                <mat-icon>view_list</mat-icon> Details
+            </a>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+<mat-paginator [pageSizeOptions]="[5,10,15]" class="paginator" showFirstLastButtons></mat-paginator>

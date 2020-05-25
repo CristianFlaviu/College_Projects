@@ -1,0 +1,92 @@
+
+
+<mat-form-field class="filter1">
+
+    <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
+  </mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 dataTable">
+  
+  
+  
+    <!-- Position Column -->
+    <!-- <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container> -->
+  
+    <ng-container matColumnDef="roomNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> RoomNumber </th>
+      <td mat-cell *matCellDef="let element"> {{element.roomNumber}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="startHour">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> StartHour </th>
+        <td mat-cell *matCellDef="let element"> {{element.startHour}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day </th>
+        <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. </th>
+        <td mat-cell *matCellDef="let i = index">{{ this.paginator.pageIndex == 0 ?  i+1 : i +1+ this.paginator.pageIndex * this.paginator.pageSize}}</td>
+      </ng-container>
+
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="deleteApp(element.id)" *ngIf="element.roomNumber==roomNumber">delete</mat-icon>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
+  
+  <mat-paginator [pageSizeOptions]="[5,10,15]" class="paginator" showFirstLastButtons></mat-paginator>
+
+
+
+  <mat-card style="width: 15%" class="filter2">
+    <mat-card-title>New Appointment</mat-card-title>
+  <mat-card-content >
+
+  <form [formGroup]="form"  >
+    <p>
+      <mat-form-field  >
+        <mat-label>hour</mat-label>
+        <mat-select formControlName="hour">
+          <mat-option *ngFor="let element of listHours" [value]="element">
+            {{element}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field >
+        <mat-label>Day of week</mat-label>
+          <mat-select  formControlName="day">
+            <mat-option *ngFor="let element of listDays" [value]="element">
+              {{element}}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    
+    
+    
+    <div class="button">
+      <button type="submit" [disabled]="!checkField()"   mat-button (click)="submit()">Create</button>
+      
+    </div>
+    
+    
+    </form>
+    </mat-card-content>
+    </mat-card>
+    

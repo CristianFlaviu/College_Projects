@@ -1,0 +1,19 @@
+<div class="topnav"  >
+    <mat-toolbar color="primary"  >
+        <a   [routerLink]='["/home"]'> Student Longue </a>
+    
+        <div class="topnav-right">
+        <a  [routerLink]='["/home"]'> Home </a>
+        <a   *ngIf="userService.getRole()=='admin'"        [routerLink]='["/rooms"]'> Rooms </a>
+        <a   *ngIf="userService.getRole()=='admin'"  [routerLink]='["/users"]'> Users </a>
+        <a  [routerLink]='["/wmapp"]'> WM </a>
+        <a  [routerLink]='["/announcements"]'>Announcements </a>
+        <a  [routerLink]='["/newReport"]'>Create Reports </a>
+        <a  *ngIf="userService.isAuthentificated()==false"[routerLink]='["/login"]'> Login </a>
+        <a  *ngIf="userService.isAuthentificated()" [routerLink]='["/logout"]'> Logout </a>
+     
+     
+        </div>
+       </mat-toolbar>
+    </div>
+  

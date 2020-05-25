@@ -1,0 +1,68 @@
+
+
+<mat-form-field class="filter">
+
+  <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 dataTable table">
+
+
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="No">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. </th>
+    <td mat-cell *matCellDef="let i = index">{{ this.paginator.pageIndex == 0 ?  i+1 : i +1+ this.paginator.pageIndex * this.paginator.pageSize}}</td>
+  </ng-container>
+  <ng-container matColumnDef="roomNumber">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Room Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.roomNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="NoStudents">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Number Studens </th>
+    <td mat-cell *matCellDef="let element"> {{element.numberStudens}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Action">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon (click)="delete(element.id)">delete</mat-icon>
+    
+      <mat-icon routerLink="/room/{{element.roomNumber}}" style="margin-left: 7%;"  (clik)="delete(element.id)">view_list</mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5,10,15]" class="paginator" showFirstLastButtons></mat-paginator>
+
+
+
+<mat-card class="form">
+  <mat-card-title style="text-align: center;">Create New Room</mat-card-title>
+  <mat-card-content>
+      <form [formGroup]="formGroup">
+
+          <mat-form-field>
+
+              <input matInput type="text" placeholder="roomNumber" formControlName="roomNumber">
+              <mat-error *ngIf="roomNumber.hasError('required')">Room Number  is required </mat-error>
+        
+          </mat-form-field>
+          <br>
+          <br>
+
+      
+          <div class="button">
+              <button type="submit" mat-button (click)="createRoom()" [disabled]="formGroup.invalid">Submit</button>
+
+          </div>
+
+      </form>
+
+  </mat-card-content>
+</mat-card>

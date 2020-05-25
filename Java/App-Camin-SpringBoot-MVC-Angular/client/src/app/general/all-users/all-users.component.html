@@ -1,0 +1,56 @@
+
+   
+   <div class="tabel">
+   <mat-form-field class="filter1" >
+
+    <input (keyup)="applyFilter($event.target.value)"matInput placeholder="Filter">
+   </mat-form-field>
+   
+   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 dataTable">
+     
+    <ng-container matColumnDef="No">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. </th>
+      <td mat-cell *matCellDef="let i = index">{{ this.paginator.pageIndex == 0 ?  i+1 : i +1+ this.paginator.pageIndex * this.paginator.pageSize}}</td>
+    </ng-container>
+   
+       <ng-container matColumnDef="roomNumber">
+         <th mat-header-cell *matHeaderCellDef mat-sort-header> Room Number </th>
+         <td mat-cell *matCellDef="let element"> {{element.roomNumber}} </td>
+       </ng-container>
+   
+     
+
+       <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+       
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+     
+
+
+       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+     </table>
+   
+     
+     
+     <mat-paginator [pageSizeOptions]="[5,10,15]" showFirstLastButtons></mat-paginator>
+   
+     
+   
+    </div>
